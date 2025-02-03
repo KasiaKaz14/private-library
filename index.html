@@ -46,7 +46,7 @@
 
       <section class="main">
         <h1 class="main__title">
-          Welcome to <span class="main__dark-title">book finder</span>!
+          Welcome to <span class="main__dark-title">library</span>!
         </h1>
         <p class="main__info">
           This is a website where you can search for books and also: add,
@@ -57,7 +57,20 @@
 
       <section class="add-book">
         <button type="button" class="add-book__btn">Click to add new book</button>
-        <section class="modal"></section>
+        <section class="modal">
+            <h4 class="add-book__title">Add a new book:</h4>
+            <form class="form">
+                <input type="text" class="title" placeholder="Add title">
+                <input type="text" class="name" placeholder="Add name">
+                <input type="text" class="surname" placeholder="Add surname">
+                <input type="text" class="species" placeholder="Add species">
+                <input type="date" class="start-date" placeholder="Add start date">
+                <input type="date" class="end-date" placeholder="Add end date">
+                    
+              <button class="add">Add book</button>
+            
+            </form>
+        </section>
       </section>
 
     </div>

@@ -8,7 +8,7 @@ button.style.display = "none";
 })
 
 document.addEventListener('click', (e) => {
-    if(!modal=== e.target || button !== e.target ){
+    if(!modal.contains(e.target) && button !== e.target ){
         modal.style.display = 'none';
         button.style.display = 'block';
     }
