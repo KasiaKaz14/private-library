@@ -23,17 +23,20 @@
           />
           <input type="text" class="header__find" placeholder="Find a book" />
           <ul class="header__list">
-            <li class="header__list-element"><a href="#">Home</a></li>
+            <li class="header__list-element"><a href="./index.html">Home</a></li>
             <li class="header__list-element">
-              <select name="" id="">
-                    <option value="read">Read</option>
-                    <option value="unread">Unread</option>
-                    <option value="favourite">Favourite</option>
-                </select>
+              <div class="dropdown">
+                <button class="dropbtn">Choose an option</button>
+                <div class="dropdown-content">
+                  <a href="./read.html">Read</a>
+                  <a href="./unread.html">Unread</a>
+                  <a href="./favourite.html">Favourite</a>
+                </div>
+              </div>
             </li>
             <li class="header__list-element"><a href="#">About Me</a></li>
             <li class="header__list-element">
-              <a href="#">
+              <a href="https://github.com/KasiaKaz14">
                 <svg class="header__icon">
                   <use href="./icons.svg#icon-github"></use>
                 </svg>
@@ -76,5 +79,6 @@
     </div>
 
     <script src="./add-book.js"></script>
+    <script src="./nav.js"></script>
   </body>
 </html>
