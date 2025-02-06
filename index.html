@@ -21,16 +21,20 @@
             alt="Logo of the website"
             class="header__img"
           />
-          <input type="text" class="header__find" placeholder="Find a book" />
+          <section class="header__search"><input type="text" class="header__find" placeholder="Find a book" />
+            <button type="submit" class="search-btn">Szukaj</button></section>
+          
           <ul class="header__list">
             <li class="header__list-element"><a href="./index.html">Home</a></li>
             <li class="header__list-element">
               <div class="dropdown">
                 <button class="dropbtn">Choose an option</button>
                 <div class="dropdown-content">
-                  <a href="./read.html">Read</a>
-                  <a href="./unread.html">Unread</a>
-                  <a href="./favourite.html">Favourite</a>
+                  <a href="./books.html" id="books">All Books</a>
+                  <a href="./read.html" id="read">Read</a>
+                  <a href="./unread.html" id="unread"
+                  >Unread</a>
+                  <a href="./favourite.html" id="favourite">Favourite</a>
                 </div>
               </div>
             </li>
@@ -63,12 +67,15 @@
         <section class="modal">
             <h4 class="add-book__title">Add a new book:</h4>
             <form class="form">
+                <input type="file" class="file" placeholder="Add file">
+                <img src="" alt="Book Cover" class="form__img" style="display: none; width: 150px; height: auto;">
                 <input type="text" class="title" placeholder="Add title">
                 <input type="text" class="name" placeholder="Add name">
                 <input type="text" class="surname" placeholder="Add surname">
                 <input type="text" class="species" placeholder="Add species">
                 <input type="date" class="start-date" placeholder="Add start date">
                 <input type="date" class="end-date" placeholder="Add end date">
+                <textarea name="" type="text" id="" class="description" placeholder="Add description"></textarea>
                     
               <button class="add">Add book</button>
             
@@ -78,7 +85,8 @@
 
     </div>
 
-    <script src="./add-book.js"></script>
-    <script src="./nav.js"></script>
+    <script src="./js/modal.js"></script>
+    <script src="./js/nav.js"></script>
+    <script src="./js/add-book.js"></script>
   </body>
 </html>
