@@ -10,7 +10,10 @@
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Preahvihear&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
     <link rel="stylesheet" href="./css/styles.css" />
+    
   </head>
   <body>
     <div class="container">
@@ -67,16 +70,25 @@
         <section class="modal">
             <h4 class="add-book__title">Add a new book:</h4>
             <form class="form">
-                <input type="file" class="file" placeholder="Add file">
+              <section>
+                <label class="custom-file-upload">
+                  <input type="file" class="file" />
+                  <i class="fas fa-upload"></i> Add an image
+              </label>
+              
                 <img src="" alt="Book Cover" class="form__img" style="display: none; width: 150px; height: auto;">
+              </section>
+              <section class="form__data">
                 <input type="text" class="title" placeholder="Add title">
                 <input type="text" class="name" placeholder="Add name">
                 <input type="text" class="surname" placeholder="Add surname">
                 <input type="text" class="species" placeholder="Add species">
                 <input type="date" class="start-date" placeholder="Add start date">
                 <input type="date" class="end-date" placeholder="Add end date">
+              </section>
+              <section>
                 <textarea name="" type="text" id="" class="description" placeholder="Add description"></textarea>
-                    
+              </section>
               <button class="add">Add book</button>
             
             </form>

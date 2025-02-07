@@ -20,7 +20,6 @@
 
 body{
     background-color: #fff;
-    overflow: hidden;
 }
 
 .container{
@@ -249,9 +248,9 @@ select{
 .modal{
     display: none;
     width: 550px;
-    height: 400px;
+    height: 500px;
     margin: 0 auto;
-    padding: 10px;
+  padding: 10px;
     border: 1px solid #fff;
 }
 
@@ -263,26 +262,40 @@ select{
 }
 
 .form{
+    position: relative;
+    width: 450px;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+   flex-direction: column;
 justify-content: center;
 align-items: center;
-margin: 20px;
+gap: 20px;
+margin: 0 auto;
 }
 
 .form input{
     width: 200px;
     height: 35px;
-margin: 0 auto;
-margin-top: 15px;
 padding-left: 15px;
+}
+
+.form__data{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 110px;
+}
+
+.description{
+    width: 420px;
+    padding: 10px;
 }
 
 .add{
     width: 150px;
     height: 45px;
-    margin-top: 30px;
     font-size: 17px;
     font-weight: 400;
     font-family: var(--main-fontfam);
@@ -302,11 +315,67 @@ cursor: pointer;
 
 }
 
-.file input[type="file"] {
+.file {
+    position: absolute;
+    top: 10px;
+    left: 16px;
+    display: none;
     width: 120px;
-    height: 50px;
+    height: 100px;
+    background-color: #fff;
+    margin-top: 10px;
 }
 
+.file-label{
+    position: absolute;
+    top: 10px;
+    left: 16px;  
+    width: 120px;
+    height: 100px;
+    background-color: #fff;
+    margin-top: 10px;
+}
+
+.custom-file-upload{
+    position: absolute;
+    top: 30px;
+    left: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 5px;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: var(--main-fontfam);
+    color: aliceblue;
+    background: linear-gradient(to right bottom, #130428, #251043, #38126D, #261045, #190634 );
+    cursor: pointer;
+
+    &:hover,
+&:focus{
+    cursor: pointer;
+    color: var(--books-btn-color-hover);
+    background: linear-gradient(to right, #38126D, #fff);
+}
+}
+
+.fas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 40px;
+    color: white;
+}
+
+
+
+.form__img{
+    position: absolute;
+    top: 10px;
+    right: 15px;
+}
 
 
 .display-title,
