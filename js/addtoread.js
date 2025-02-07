@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let readBooks = JSON.parse(localStorage.getItem('readBooks')) || [];
 
     const renderReadBooks = () => {
-        readBookList.innerHTML = '';
+       
 
         if (readBooks.length === 0) {
             const p = document.createElement('p');

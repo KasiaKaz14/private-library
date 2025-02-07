@@ -24,7 +24,6 @@ body{
 
 .container{
     width: 1440px;
-  height: 1500px;
     margin: 0 auto;
     background-color: var(--main-bg-color)
 }
@@ -276,6 +275,7 @@ margin: 0 auto;
     width: 200px;
     height: 35px;
 padding-left: 15px;
+outline: none;
 }
 
 .form__data{
@@ -286,11 +286,13 @@ padding-left: 15px;
     justify-content: center;
     align-items: center;
     margin-top: 110px;
+   
 }
 
 .description{
     width: 420px;
     padding: 10px;
+    outline: none;
 }
 
 .add{
@@ -379,7 +381,8 @@ cursor: pointer;
 
 
 .display-title,
-.read-title{
+.read-title,
+.unread-title{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -390,7 +393,8 @@ cursor: pointer;
 }
 
 .books-info,
-.read-info{
+.read-info,
+.unread-info{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -401,20 +405,19 @@ cursor: pointer;
 }
 
 .book,
-.readbook-section{
+.readbook-section,
+.unreadbook-section{
     display: flex;
     flex-direction: row;
     gap: 30px;
+   padding-left: 80px;
 }
 
 
 .book-item,
-.readbook-list{
+.readbook-list,
+.unreadbook-list{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
     gap: 15px;
     padding-top: 15px;
     font-size: 18px;
@@ -423,30 +426,37 @@ cursor: pointer;
 }
 
 .book-list,
-.read-list{
+.read-list,
+.unread-list{
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    gap: 45px;
+    flex-wrap: wrap;
+  gap: 40px;
+
 }
 
 .book-data,
-.read-data{
+.read-data,
+.unread-data{
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    padding-top: 15px;
+    gap: 5px;
+    padding-top: 5px;
 }
 
 .book-cover{
-    width: 300px;
-    height: 350px;
+    width: 200px;
+    height: 300px;
 }
 
 .delete-btn,
-.read-btn{
+.read-btn,
+.unread-btn,
+.move-to-unread-btn,
+.move-to-read-btn{
     width: 120px;
     height: 40px;
+    margin-top: 5px;
     font-size: 14px;
     font-weight: 600;
     font-family: var(--main-fontfam);
