@@ -8,6 +8,8 @@
 --greet-dark-color: #7127BA;
 --greet-fontfam: "Preahvihear", sans-serif;
 --main-fontfam: "Plus Jakarta Sans", sans-serif;
+--books-btn-color-hover: #1A0B2E;
+--books-btn-bgcolor-hover: aliceblue;
 }
 
 *{
@@ -77,9 +79,20 @@ body{
     height: 40px;
     margin-top: 31px;
     margin-right: 210px;
+    font-size: 14px;
+    font-weight: 600;
     font-family: var(--header-fontfam);
     color: white;
     background-color: var(--greet-dark-color);
+    cursor:pointer;
+
+    &:hover, 
+    &:focus{
+        border: none;
+        color: var(--books-btn-color-hover);
+        background-color: var(--books-btn-bgcolor-hover);
+        background: linear-gradient(to right, #38126D, #fff);
+    }
 }
 
 .header__list{
@@ -271,10 +284,22 @@ padding-left: 15px;
     height: 45px;
     margin-top: 30px;
     font-size: 17px;
+    font-weight: 400;
+    font-family: var(--main-fontfam);
     color: white;
     background: linear-gradient(to right bottom, #130428, #251043, #38126D, #261045, #190634 );
     border: none;
 cursor: pointer;
+
+
+&:hover,
+&:focus{
+    cursor: pointer;
+    color: var(--books-btn-color-hover);
+    background-color: var(--books-btn-bgcolor-hover);
+    background: linear-gradient(to right, #38126D, #fff);
+}
+
 }
 
 .file input[type="file"] {
@@ -284,7 +309,8 @@ cursor: pointer;
 
 
 
-.display-title{
+.display-title,
+.read-title{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -294,7 +320,8 @@ cursor: pointer;
     color: var(--greet-light-color);
 }
 
-.books-info{
+.books-info,
+.read-info{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -304,14 +331,16 @@ cursor: pointer;
     color: rgb(188, 182, 182);
 }
 
-.book{
+.book,
+.readbook-section{
     display: flex;
     flex-direction: row;
     gap: 30px;
 }
 
 
-.book-item{
+.book-item,
+.readbook-list{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -324,12 +353,16 @@ cursor: pointer;
     color: aliceblue;
 }
 
-.book-list{
+.book-list,
+.read-list{
     display: flex;
-    padding-left: 30px;
+    flex-direction: row;
+    justify-content: center;
+    gap: 45px;
 }
 
-.book-data{
+.book-data,
+.read-data{
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -341,9 +374,24 @@ cursor: pointer;
     height: 350px;
 }
 
-.delete-btn{
+.delete-btn,
+.read-btn{
     width: 120px;
     height: 40px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: var(--main-fontfam);
     color: aliceblue;
     background-color: var(--greet-dark-color);
+    cursor: pointer;
+    
+
+    &:hover,
+    &:focus{
+        cursor: pointer;
+        color: var(--books-btn-color-hover);
+        background-color: var(--books-btn-bgcolor-hover);
+        background: linear-gradient(to right, #38126D, #fff);
+    }
 }
+
