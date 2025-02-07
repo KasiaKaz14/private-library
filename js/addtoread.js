@@ -1,11 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
     const readBookList = document.querySelector('.read-list');
 
+    
     let readBooks = JSON.parse(localStorage.getItem('readBooks')) || [];
 
     const renderReadBooks = () => {
        
+        readBookList.innerHTML = "";
 
+       
         if (readBooks.length === 0) {
             const p = document.createElement('p');
             p.classList.add('read-info');
@@ -14,7 +17,10 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
+      
         readBooks.forEach((book, index) => {
+            if (!book || !book.title) return; 
+
             const readBook = document.createElement('div');
             readBook.classList.add('readbook-list');
 
@@ -29,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         <p><strong>Species:</strong> ${book.species}</p>
                         <p><strong>Start Date:</strong> ${book.startDate}</p>
                         <p><strong>End Date:</strong> ${book.endDate}</p>
-                        <p><strong>Description:</strong> ${book.description ? book.description : "No description"}</p>
+                        <p><strong>Description:</strong> ${book.description || "No description"}</p>
                         <button class="delete-btn" data-index="${index}" type="button">Delete book</button>
                     </section>
                 </section>
@@ -38,17 +44,18 @@ document.addEventListener("DOMContentLoaded", function () {
             readBookList.appendChild(readBook);
         });
 
-      
+       
         document.querySelectorAll('.delete-btn').forEach(button => {
             button.addEventListener('click', (e) => {
                 e.preventDefault();
                 let index = e.target.getAttribute('data-index');
                 readBooks.splice(index, 1);
                 localStorage.setItem("readBooks", JSON.stringify(readBooks));
-                renderReadBooks(); 
+                renderReadBooks();  
             });
         });
     };
 
+   
     renderReadBooks(); 
 });
