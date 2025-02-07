@@ -158,7 +158,7 @@ select{
     background-color: var(--header-bg-color);
     border: none;
     cursor: pointer;
-    font-size: 12px;
+    font-size: 20px;
     font-weight: bolder;
     font-family: var(--header-fontfam);
     color: var(--header-font-color);
