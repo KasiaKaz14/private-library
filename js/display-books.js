@@ -85,9 +85,12 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll(".read-btn").forEach((button) => {
         button.addEventListener("click", (e) => {
           let index = parseInt(e.target.getAttribute("data-index"), 10);
+        
+
           
           if (!readBooks.some((readBook) => readBook.title === books[index].title)) {
-            books[index].endDate = new Date().toISOString().split("T")[0];
+            let bookCopy = { ...books[index] }; 
+            bookCopy.endDate = new Date().toISOString().split("T")[0];
             readBooks.push(books[index]);
             unreadBooks = unreadBooks.filter(
               (unreadBook) => unreadBook.title !== books[index].title
@@ -110,7 +113,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll(".unread-btn").forEach((button) => {
       button.addEventListener("click", (e) => {
         let index = parseInt(e.target.getAttribute("data-index"), 10);
-        let book = { ...books[index] };
+        let book = books[index];
      
 
         if (
