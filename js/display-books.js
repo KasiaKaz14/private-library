@@ -85,12 +85,9 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll(".read-btn").forEach((button) => {
         button.addEventListener("click", (e) => {
           let index = parseInt(e.target.getAttribute("data-index"), 10);
-        
-
           
           if (!readBooks.some((readBook) => readBook.title === books[index].title)) {
-            let bookCopy = { ...books[index] }; 
-            bookCopy.endDate = new Date().toISOString().split("T")[0];
+            books[index].endDate = new Date().toDateString().split("T");
             readBooks.push(books[index]);
             unreadBooks = unreadBooks.filter(
               (unreadBook) => unreadBook.title !== books[index].title
