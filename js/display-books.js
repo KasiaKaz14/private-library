@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const bookList = document.querySelector(".book-list");
   
-    // Bezpieczna inicjalizacja tablic
+    
     let books = JSON.parse(localStorage.getItem("books")) || [];
     let readBooks = JSON.parse(localStorage.getItem("readBooks")) || [];
     let unreadBooks = JSON.parse(localStorage.getItem("unreadBooks")) || [];
@@ -19,6 +19,15 @@ document.addEventListener("DOMContentLoaded", function () {
   
       books.forEach((book, index) => {
         if (!book || !book.title) return;
+
+        let isRead = readBooks.some((readBook) => readBook.title === book.title);
+        let isReadButton = isRead ? "Added to read" : "Add to read";
+
+        let isUnread = unreadBooks.some((unreadBook) => unreadBook.title === book.title);
+        let isUnreadButton = isUnread ? "Added to unread" : "Add to unread";
+
+        let isFinished = readBooks.some((readBook) => readBook.endDate === book.endDate);
+        let isFinishedInfo = isFinished ? book.endDate : "Not finished yet";
   
         const bookItem = document.createElement("div");
         bookItem.classList.add("book-item");
@@ -33,12 +42,12 @@ document.addEventListener("DOMContentLoaded", function () {
                       <p><strong>Author:</strong> ${book.name} ${book.surname}</p>
                       <p><strong>Species:</strong> ${book.species}</p>
                       <p><strong>Start Date:</strong> ${book.startDate}</p>
-                      <p><strong>End Date:</strong> ${book.endDate ? book.endDate : "Not finished yet"}</p>
+                      <p><strong>End Date:</strong> ${isFinishedInfo}</p>
                       <p><strong>Description:</strong> ${book.description || "No description"}</p>
                       <section class="button">
                           <button type="button" class="delete-btn" data-index="${index}">Delete book</button>
-                          <button type="button" class="read-btn" data-index="${index}">Add to read</button>
-                          <button type="button" class="unread-btn" data-index="${index}">Add to unread</button>
+                          <button type="button" class="read-btn" data-index="${index}">${isReadButton}</button>
+                          <button type="button" class="unread-btn" data-index="${index}">${isUnreadButton}</button>
                       </section>
                   </section>
               </section>
