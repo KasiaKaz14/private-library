@@ -24,6 +24,7 @@ body{
 
 .container{
     width: 1440px;
+    min-height: 100vh;
     margin: 0 auto;
     background-color: var(--main-bg-color)
 }
@@ -224,6 +225,10 @@ select{
     color: var(--greet-light-color);
 }
 
+.add-book{
+    padding-bottom: 30px;
+}
+
 .add-book__btn{
     width: 250px;
     height: 55px;
@@ -382,7 +387,8 @@ cursor: pointer;
 
 .display-title,
 .read-title,
-.unread-title{
+.unread-title,
+.favourite-title{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -394,7 +400,8 @@ cursor: pointer;
 
 .books-info,
 .read-info,
-.unread-info{
+.unread-info,
+.favourite-info{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -406,7 +413,8 @@ cursor: pointer;
 
 .book,
 .readbook-section,
-.unreadbook-section{
+.unreadbook-section,
+.favouritebook-section{
     display: flex;
     flex-direction: row;
     gap: 30px;
@@ -414,9 +422,12 @@ cursor: pointer;
 }
 
 
+
+
 .book-item,
 .readbook-list,
-.unreadbook-list{
+.unreadbook-list,
+.favouritebook-list{
     display: flex;
     gap: 15px;
     padding-top: 15px;
@@ -427,7 +438,8 @@ cursor: pointer;
 
 .book-list,
 .read-list,
-.unread-list{
+.unread-list,
+.favourite-list{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -437,23 +449,30 @@ cursor: pointer;
 
 .book-data,
 .read-data,
-.unread-data{
+.unread-data,
+.favourite-data{
     display: flex;
     flex-direction: column;
     gap: 5px;
-    padding-top: 5px;
 }
 
 .book-cover{
     width: 200px;
-    height: 300px;
+    height: 350px;
+}
+
+.button{
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .delete-btn,
 .read-btn,
 .unread-btn,
-.move-to-unread-btn,
-.move-to-read-btn{
+.favourite-btn{
     width: 120px;
     height: 40px;
     margin-top: 5px;
