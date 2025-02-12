@@ -6,11 +6,12 @@ document.addEventListener("DOMContentLoaded", function () {
   let unreadBooks = JSON.parse(localStorage.getItem("unreadBooks")) || [];
   let favouriteBooks = JSON.parse(localStorage.getItem("favouriteBooks")) || [];
 
-  // Filtrujemy książki, aby usunąć puste wartości
   books = books.filter((book) => book !== null);
   readBooks = readBooks.filter((readBook) => readBook !== null);
   unreadBooks = unreadBooks.filter((unreadBook) => unreadBook !== null);
-  favouriteBooks = favouriteBooks.filter((favouriteBook) => favouriteBook !== null);
+  favouriteBooks = favouriteBooks.filter(
+    (favouriteBook) => favouriteBook !== null
+  );
 
   const renderBooks = () => {
     bookList.innerHTML = "";
@@ -26,7 +27,9 @@ document.addEventListener("DOMContentLoaded", function () {
     books.forEach((book, index) => {
       if (!book || !book.title) return;
 
-      let isRead = readBooks.some((readBook) => readBook && readBook.title === book.title);
+      let isRead = readBooks.some(
+        (readBook) => readBook && readBook.title === book.title
+      );
       let isReadButton = isRead ? "Added to read" : "Add to read";
 
       let isUnread = unreadBooks.some(
@@ -34,10 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
       );
       let isUnreadButton = isUnread ? "Added to unread" : "Add to unread";
 
-      let isFinished = readBooks.some(
-        (readBook) => readBook && readBook.endDate === book.endDate
-      );
-      let isFinishedInfo = isFinished ? book.endDate : "Not finished yet";
+      let isFinishedInfo = isRead ? book.endDate : "Not finished yet";
 
       let isFavourite = favouriteBooks.some(
         (favouriteBook) => favouriteBook && favouriteBook.title === book.title
@@ -52,15 +52,21 @@ document.addEventListener("DOMContentLoaded", function () {
       bookItem.innerHTML = `
               <section class="book">
                   <section class="cover-img">
-                      <img src="${book.coverImage}" alt="${book.title}" class="book-cover">
+                      <img src="${book.coverImage}" alt="${
+        book.title
+      }" class="book-cover">
                   </section>
                   <section class="book-data">
                       <h2>${book.title}</h2>
-                      <p><strong>Author:</strong> ${book.name} ${book.surname}</p>
+                      <p><strong>Author:</strong> ${book.name} ${
+        book.surname
+      }</p>
                       <p><strong>Species:</strong> ${book.species}</p>
                       <p><strong>Start Date:</strong> ${book.startDate}</p>
                       <p><strong>End Date:</strong> ${isFinishedInfo}</p>
-                      <p><strong>Description:</strong> ${book.description || "No description"}</p>
+                      <p><strong>Description:</strong> ${
+                        book.description || "No description"
+                      }</p>
                       <section class="button">
                           <button type="button" class="delete-btn" data-index="${index}">Delete book</button>
                           <button type="button" class="read-btn" data-index="${index}">${isReadButton}</button>
@@ -84,10 +90,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.querySelectorAll(".read-btn").forEach((button) => {
       button.addEventListener("click", (e) => {
+        e.preventDefault();
         let index = parseInt(e.target.getAttribute("data-index"), 10);
 
-        if (!readBooks.some((readBook) => readBook && readBook.title === books[index].title)) {
-          books[index].endDate = new Date().toDateString().split("T");
+        if (
+          !readBooks.some(
+            (readBook) => readBook && readBook.title === books[index].title
+          )
+        ) {
+          books[index].endDate = new Date().toDateString();
           readBooks.push(books[index]);
           unreadBooks = unreadBooks.filter(
             (unreadBook) => unreadBook.title !== books[index].title
@@ -99,7 +110,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
           renderBooks();
 
-          if (typeof renderReadBooks === "function" && typeof renderUnreadBooks === "function") {
+          if (
+            typeof renderReadBooks === "function" &&
+            typeof renderUnreadBooks === "function"
+          ) {
             renderReadBooks();
             renderUnreadBooks();
           }
@@ -112,17 +126,24 @@ document.addEventListener("DOMContentLoaded", function () {
         let index = parseInt(e.target.getAttribute("data-index"), 10);
         let book = books[index];
 
-        if (!unreadBooks.some((unreadBook) => unreadBook && unreadBook.title === book.title)) {
+        if (
+          !unreadBooks.some(
+            (unreadBook) => unreadBook && unreadBook.title === book.title
+          )
+        ) {
           unreadBooks.push(book);
           readBooks = readBooks.filter(
-            (readBook) => readBook.title !== book.title
+            (readBook) => readBook && readBook.title !== book.title
           );
           localStorage.setItem("readBooks", JSON.stringify(readBooks));
           localStorage.setItem("unreadBooks", JSON.stringify(unreadBooks));
           localStorage.setItem("books", JSON.stringify(books));
-          renderBooks();
 
-          if (typeof renderReadBooks === "function" && typeof renderUnreadBooks === "function") {
+          renderBooks();
+          if (
+            typeof renderReadBooks === "function" &&
+            typeof renderUnreadBooks === "function"
+          ) {
             renderReadBooks();
             renderUnreadBooks();
           }
@@ -137,9 +158,17 @@ document.addEventListener("DOMContentLoaded", function () {
         let index = parseInt(e.target.getAttribute("data-index"), 10);
         let book = { ...books[index] };
 
-        if (!favouriteBooks.some((favouriteBook) => favouriteBook && favouriteBook.title === book.title)) {
+        if (
+          !favouriteBooks.some(
+            (favouriteBook) =>
+              favouriteBook && favouriteBook.title === book.title
+          )
+        ) {
           favouriteBooks.push(book);
-          localStorage.setItem("favouriteBooks", JSON.stringify(favouriteBooks));
+          localStorage.setItem(
+            "favouriteBooks",
+            JSON.stringify(favouriteBooks)
+          );
           localStorage.setItem("books", JSON.stringify(books));
           renderBooks();
         }
