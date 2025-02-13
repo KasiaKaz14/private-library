@@ -456,6 +456,9 @@ select {
 }
 
 .add-book__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 180px;
     height: 40px;
     margin: 50px auto;
@@ -672,14 +675,16 @@ select {
 .unread-title,
 .favourite-title,
 .about-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+    padding-top: 40px;
+    font-size: 28px;
+    font-family: var(--greet-fontfam);
+    color: var(--greet-light-color);
     @media screen and (min-width: 1200px) {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 40px;
   font-size: 50px;
-  font-family: var(--greet-fontfam);
-  color: var(--greet-light-color);
     }
 }
 
@@ -752,10 +757,14 @@ select {
 .readbook-section,
 .unreadbook-section,
 .favouritebook-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     @media screen and (min-width: 1200px) {
-  display: flex;
-  flex-direction: row;
-  gap: 30px;
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
   padding-left: 80px;
     }
 }
@@ -764,13 +773,26 @@ select {
 .readbook-list,
 .unreadbook-list,
 .favouritebook-list {
+display: flex;
+flex-direction: column;
+gap: 50px;
+margin-bottom: 80px;
+    font-size: 18px;
+    font-family: var(--greet-fontfam);
+  color: aliceblue;
+    @media screen and (max-width: 767px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        padding-top: 20px; 
+    }
     @media screen and (min-width: 1200px) {
   display: flex;
   gap: 15px;
   padding-top: 15px;
-  font-size: 18px;
-  font-family: var(--greet-fontfam);
-  color: aliceblue;
+ 
+  
     }
 }
 
@@ -778,6 +800,7 @@ select {
 .read-list,
 .unread-list,
 .favourite-list {
+    padding-bottom: 30px;
     @media screen and (min-width: 1200px) {
   display: flex;
   flex-direction: row;
@@ -791,6 +814,10 @@ select {
 .read-data,
 .unread-data,
 .favourite-data {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 300px;
     @media screen and (min-width: 1200px) {
   display: flex;
   flex-direction: column;
@@ -800,6 +827,8 @@ select {
 }
 
 .book-cover {
+    width: 300px;
+    height: 350px;
     @media screen and (min-width: 1200px) {
   width: 200px;
   height: 350px;
@@ -814,6 +843,7 @@ select {
 }
 
 .button {
+    margin-top: 20px;
     @media screen and (min-width: 1200px) {
   width: 300px;
   display: flex;
@@ -828,23 +858,25 @@ select {
 .unread-btn,
 .favourite-btn,
 .add-btn {
+    width: 130px;
+    height: 40px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: var(--main-fontfam);
+    color: aliceblue;
+    background-color: var(--greet-dark-color);
+    cursor: pointer;
+  
+    &:hover,
+    &:focus {
+      cursor: pointer;
+      color: var(--books-btn-color-hover);
+      background-color: var(--books-btn-bgcolor-hover);
+      background: linear-gradient(to right, #38126d, #fff);
+    }
     @media screen and (min-width: 1200px) {
   width: 120px;
   height: 40px;
   margin-top: 5px;
-  font-size: 14px;
-  font-weight: 600;
-  font-family: var(--main-fontfam);
-  color: aliceblue;
-  background-color: var(--greet-dark-color);
-  cursor: pointer;
-
-  &:hover,
-  &:focus {
-    cursor: pointer;
-    color: var(--books-btn-color-hover);
-    background-color: var(--books-btn-bgcolor-hover);
-    background: linear-gradient(to right, #38126d, #fff);
-  }
   }
 }
