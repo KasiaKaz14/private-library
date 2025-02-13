@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Me</title>
-    <link rel="stylesheet" href="./css/styles.css">
-</head>
-<body>
-    <div class="container"><header class="header">
-        <nav class="header__nav">
-            <img
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <nav class="header__nav about-nav">
+          <img
             src="./img/Logo.png"
             alt="Logo of the website"
             class="header__img"
           />
-          <input type="text" class="header__find" placeholder="Find a book" />
+       
           <ul class="header__list">
-            <li class="header__list-element"><a href="./index.html">Home</a></li>
+            <li class="header__list-element">
+              <a href="./index.html">Home</a>
+            </li>
             <li class="header__list-element">
               <div class="dropdown">
-                <button class="dropbtn">Choose an option</button>
+                <button class="dropbtn">Library</button>
                 <div class="dropdown-content">
                   <a href="./books.html" id="books">All Books</a>
                   <a href="./read.html">Read</a>
@@ -28,7 +31,7 @@
                 </div>
               </div>
             </li>
-            <li class="header__list-element"><a href="#">About Me</a></li>
+            <li class="header__list-element"><a href="#">About</a></li>
             <li class="header__list-element">
               <a href="https://github.com/KasiaKaz14">
                 <svg class="header__icon">
@@ -39,7 +42,40 @@
             </li>
           </ul>
         </nav>
-      </header></div>
+      </header>
+
+      <section class="about">
+        <h1 class="about-title">About This Website 📚✨</h1>
+        <h4 class="about-info">
+          Welcome to Online Library, a place where book lovers can manage and
+          explore their favorite reads!
+        </h4>
+
+        <p class="about-info-title">📖 What Can You Do Here?</p>
+        <ul class="about-list">
+          <li class="about-element">
+            ✔ Add Your Own Books – Keep track of your personal collection.
+          </li>
+          <li class="about-element">
+            ✔ Mark Books as Read or Unread – Organize your reading list.
+          </li>
+          <li class="about-element">
+            ✔ Add to Favorites – Save your most loved books for quick access.
+          </li>
+          <li class="about-element">
+            ✔ Search for Books – Easily find books in your collection.
+          </li>
+          <li class="about-element">
+            ✔ Google Books API Integration – Discover new books from the Google
+            Books database.
+          </li>
+        </ul>
+
+       <p class="about-extra-info">Whether you're a passionate reader or just starting your book journey,
+        this website helps you stay organized and explore new titles
+        effortlessly. Happy reading! 📚💙</p> 
+      </section>
+    </div>
     <script src="./js/nav.js"></script>
-</body>
+  </body>
 </html>
