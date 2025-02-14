@@ -46,6 +46,27 @@
                   >
                 </li>
               </ul>
+
+              <button class="menu-toggle js-open-menu" aria-expanded="false" aria-controls="mobile-menu">
+                <svg class="icon-svg-hamburger" width="24" height="24" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                </svg>
+            </button>
+            <ul class="menu">
+              <li><a href="./index.html" class="link">Home</a></li>
+              <li><a href="./books.html" class="link">All Books</a></li>
+              <li><a href="./read.html" class="link">Read</a></li>
+              <li><a href="./unread.html" class="link">Unread</a></li>
+              <li><a href="./favourite.html" class="link">Favourite</a></li>
+              <li><a href="./about.html" class="link">About</a></li>
+              <li><a href="https://github.com/KasiaKaz14" class="link">
+                  <svg class="header__icon">
+                      <use href="./icons.svg#icon-github"></use>
+                  </svg>
+                  Github
+              </a></li>
+          </ul>
+
             </nav>
           </header>
 
@@ -54,8 +75,33 @@
             <div class="favourite-list"></div>
           </section>
 
+
+          <!-- Menu mobilne -->
+<section class="menu-container js-menu-container" id="mobile-menu">
+  <button class="menu-toggle js-close-menu">
+      <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="icon-svg-close" fill="whitesmoke">
+          <path fill-rule="whitesmoke" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="whitesmoke"></path>
+      </svg>
+  </button>
+  <ul class="mobile-menu">
+      <li><a href="./index.html" class="link">Home</a></li>
+      <li><a href="./books.html" class="link">All Books</a></li>
+      <li><a href="./read.html" class="link">Read</a></li>
+      <li><a href="./unread.html" class="link">Unread</a></li>
+      <li><a href="./favourite.html" class="link">Favourite</a></li>
+      <li><a href="./about.html" class="link">About</a></li>
+      <li><a href="https://github.com/KasiaKaz14" class="link">
+          <svg class="header__icon">
+              <use href="./icons.svg#icon-github"></use>
+          </svg>
+          Github
+      </a></li>
+  </ul>
+</section>
+
     </div>
   
     <script src="./js/favourite.js"></script>
+    <script src="./js/mobile-menu.js"></script>
 </body>
 </html>

@@ -705,50 +705,65 @@ select {
 }
 
 .about-info {
-    @media screen and (min-width: 1200px) {
-  display: flex;
+    display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin: 20px 250px;
-  font-size: 30px;
+  margin: 0 70px;
+  font-size: 25xp;
   font-family: var(--main-fontfam);
   color: rgb(188, 182, 182);
+  line-height: 1.4;
+    @media screen and (min-width: 1200px) {
+  margin: 20px 250px;
+  font-size: 30px;
+
     }
 }
 
 .about-info-title {
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+    color: aliceblue;
+    font-family: var(--main-fontfam);
     @media screen and (min-width: 1200px) {
-  display: flex;
-  justify-content: center;
   margin-top: 150px;
-  color: aliceblue;
   font-size: 20px;
-  font-family: var(--main-fontfam);
     }
 }
 
 .about-list{
-    @media screen and (min-width: 1200px) {
     display: flex;
-  flex-direction: column;
-  align-items: center;
-    gap: 15px;
+    flex-direction: column;
+    align-items: center;
+      gap: 15px;
+      margin: 20px 50px;
+      font-family: var(--main-fontfam);
+      color: aliceblue;
+      list-style: none;
+      line-height: 1.6;
+    @media screen and (min-width: 1200px) {
     margin: 30px 400px;
     margin-top: 30px;
-    font-family: var(--main-fontfam);
-    color: aliceblue;
-    list-style: none;
     }
 }
 
 .about-extra-info{
-    @media screen and (min-width: 1200px) {
     display: flex;
     justify-content: center;
-    margin-top: 200px;
+    margin: 0 30px;
+    margin-top: 60px;
+    font-size: 15px;
     font-family: var(--main-fontfam);
-    color: aliceblue;
+    color: rgb(152, 202, 247);
+@media screen and (max-width: 767px) {
+    text-align: center;
+    padding-bottom: 40px;
+    line-height: 1.5;
+}
+    @media screen and (min-width: 1200px) {
+    margin-top: 200px;
     }
 }
 
